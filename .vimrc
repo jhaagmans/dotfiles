@@ -1,16 +1,16 @@
 let needsToInstallBundles=0
-if !isdirectory(expand("~/.vim/bundle/vundle"))
+if !isdirectory(expand("~/.config/nvim/bundle/vundle"))
   echo "\nInstalling Vim dependencies... Please be patient!\n"
-  silent !mkdir -p ~/.vim/tmp
-  silent !mkdir -p ~/.vim/swap
-  silent !mkdir -p ~/.vim/undo
-  silent !mkdir -p ~/.vim/bundle
-  silent !mkfifo ~/.vim/commands-fifo
-  silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+  silent !mkdir -p ~/.config/nvim/tmp
+  silent !mkdir -p ~/.config/nvim/swap
+  silent !mkdir -p ~/.config/nvim/undo
+  silent !mkdir -p ~/.config/nvim/bundle
+  silent !mkfifo ~/.config/nvim/commands-fifo
+  silent !git clone https://github.com/gmarik/vundle ~/.config/nvim/bundle/vundle
   let needsToInstallBundles=1
 endif
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.config/nvim/bundle/vundle/
 call vundle#rc()
 
 " Do these first, because other plugins depend on them
